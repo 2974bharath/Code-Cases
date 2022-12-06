@@ -1,0 +1,65 @@
+#include<stdio.h>
+void arraySort(int arr[],int);
+void findMax(int arr[],int);
+void findMin(int arr[],int);
+int main(){
+	int arr[10];
+	int opt;
+	int lim,i;
+	printf("Enter the number of elements in the array : ");
+	scanf("%d",&lim);
+	for(i=0;i<lim;i++){
+		scanf("%d",&arr[i]);
+	}
+	printf("Enter any option:\n1.Sort\n2.Maximum\n3.Minimum\n");
+	scanf("%d",&opt);
+	switch(opt){
+		case 1:
+			arraySort(arr,lim);
+			break;
+		case 2:
+			findMax(arr,lim);
+			break;
+		case 3:
+			findMin(arr,lim);
+			break;
+		default:
+			printf("Enter a proper choice");
+	}
+	return 0;
+}
+void arraySort(int arr[],int lim){
+	int j;
+	int a,b,tem;
+		for(a=0;a<lim;a++){
+		for(b=a+1;b<lim;b++){
+			if(arr[a]>arr[b]){
+				tem = arr[a];
+				arr[a]=arr[b];
+				arr[b]= tem;
+			}
+		}
+	}
+	printf("Sorted array :\n");
+	for(j=0;j<lim;j++){
+		printf("%d\t",arr[j]);
+	}
+}
+void findMax(int arr[],int lim){
+	int j,tem=0;
+	for(j=0;j<lim;j++){
+		if (tem <arr[j]){
+		tem= arr[j];
+		}
+	}
+	printf("The maximum element in the array is : %d ",tem);
+}
+void findMin(int arr[],int lim){
+	int j,tem=arr[0];
+	for(j=0;j<lim;j++){
+		if (tem >arr[j]){
+		tem= arr[j];
+		}
+	}
+	printf("The mimimum element in the array is : %d ",tem);
+}
