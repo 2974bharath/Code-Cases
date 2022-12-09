@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+	int value;
+	struct node *next;
+};
+int main(){
+	int value,i,j,count=1,choice=1;
+	struct node *head,*temp,*newnode;
+	while(choice==1){
+		newnode = (struct node*)malloc(sizeof(struct node));
+		printf("Enter the Value : ");
+		scanf("%d",&newnode->value);
+		if(head==0){
+			head=temp=newnode;
+		}else{
+			temp->next = newnode;
+			temp=newnode;count++;
+		}
+		printf("\nDo You want to another number : ");
+		scanf("%d",&choice);
+}
+	temp=head;
+		for(j=0;j<count;j++){
+			if(temp!=0){
+			printf("%d  ",temp->value);
+			temp=temp->next;
+		}	
+	}
+	return 0;
+}
