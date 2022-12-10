@@ -19,7 +19,7 @@ int main(){
 		}
 		printf("\nDo You want to another number : ");
 		scanf("%d",&choice);
-}
+	}
 	temp=head;
 		for(j=0;j<count;j++){
 			if(temp!=0){
